@@ -1,5 +1,5 @@
-#ifndef SIMULATION_ENGINE_TEXT_FILE_READING_H
-#define SIMULATION_ENGINE_TEXT_FILE_READING_H
+#ifndef CPP_COMMONS_TEXT_FILE_READING_H
+#define CPP_COMMONS_TEXT_FILE_READING_H
 
 #include <string>
 
@@ -16,4 +16,4 @@ namespace commons::io {
 	[[maybe_unused]] std::string readTextFile(const std::string &filename);
 }
 
-#endif //SIMULATION_ENGINE_TEXT_FILE_READING_H
+#endif //CPP_COMMONS_TEXT_FILE_READING_H

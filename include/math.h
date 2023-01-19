@@ -1,5 +1,5 @@
-#ifndef SIMULATION_ENGINE_MATH_H
-#define SIMULATION_ENGINE_MATH_H
+#ifndef CPP_COMMONS_MATH_H
+#define CPP_COMMONS_MATH_H
 
 #include <cmath>
 
@@ -16,4 +16,4 @@ namespace commons::math {
 	}
 }
 
-#endif //SIMULATION_ENGINE_MATH_H
+#endif //CPP_COMMONS_MATH_H

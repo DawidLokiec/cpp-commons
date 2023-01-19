@@ -1,5 +1,5 @@
-#ifndef SIMULATION_ENGINE_LANGUAGE_H
-#define SIMULATION_ENGINE_LANGUAGE_H
+#ifndef CPP_COMMONS_LANGUAGE_H
+#define CPP_COMMONS_LANGUAGE_H
 
 /**
  * The namespace of the current library.
@@ -19,4 +19,4 @@ namespace commons {
 	}
 }
 
-#endif //SIMULATION_ENGINE_LANGUAGE_H
+#endif //CPP_COMMONS_LANGUAGE_H
