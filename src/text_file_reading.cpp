@@ -14,8 +14,8 @@ namespace {
 	std::ifstream inputFileStream;
 	// enable exception to let the caller know about occurred errors
 	inputFileStream.exceptions(std::ifstream::failbit | std::ifstream::badbit | std::ifstream::eofbit);
-	inputFileStream.open(filename);
 	try {
+		inputFileStream.open(filename);
 		std::stringstream stringBuffer;
 		stringBuffer << inputFileStream.rdbuf();
 		closeStreamIfOpen(inputFileStream);

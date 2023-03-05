@@ -16,4 +16,8 @@ dolore te feugait nulla facilisi.)";
 	ASSERT_EQ(expectedText, actualValue);
 
 	ASSERT_EQ("", commons::io::readTextFile(TEST_RESOURCES_FOLDER_PATH"/empty.txt"));
+
+	// Just for test coverage
+	const std::string wrongFilename = "no.exist";
+	EXPECT_THROW(commons::io::readTextFile(wrongFilename), std::exception);
 }
