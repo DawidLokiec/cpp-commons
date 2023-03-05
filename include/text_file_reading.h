@@ -4,7 +4,7 @@
 #include <string>
 
 /**
- * The namespace of the current library.
+ * @brief Namespace IO-related functions and classes.
  */
 namespace commons::io {
 

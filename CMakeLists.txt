@@ -42,6 +42,11 @@ FetchContent_MakeAvailable(googletest)
 # Unit tests as an executable of this library
 add_executable(${PROJECT_NAME}-unit-tests
         test/math_test.cpp
-        )
+        test/text_file_reading_test.cpp)
 
 target_link_libraries(${PROJECT_NAME}-unit-tests gtest_main ${PROJECT_NAME})
+
+target_include_directories(${PROJECT_NAME}-unit-tests PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+
+set(TEST_RESOURCES_FOLDER_PATH "${PROJECT_SOURCE_DIR}/test/res/")
+configure_file(config.h.in config.h @ONLY)

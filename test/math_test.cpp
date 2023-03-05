@@ -11,4 +11,3 @@ TEST(MathTest, ShouldCalculateTheSquareOfANumberCorrectly) {
 	ASSERT_FLOAT_EQ(9.0, commons::math::pow2(-3.0));
 	ASSERT_FLOAT_EQ(0.0, commons::math::pow2(0.0));
 }
-
