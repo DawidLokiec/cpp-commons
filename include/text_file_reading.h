@@ -13,7 +13,7 @@ namespace commons::io {
 	  * @param filename the name of the file to read.
 	  * @return the content of the file.
 	  */
-	[[maybe_unused]] std::string readTextFile(const std::string &filename);
+	[[maybe_unused]] [[nodiscard]] std::string readTextFile(const std::string &filename);
 }
 
 #endif //CPP_COMMONS_TEXT_FILE_READING_H
