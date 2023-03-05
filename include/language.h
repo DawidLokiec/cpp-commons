@@ -2,7 +2,7 @@
 #define CPP_COMMONS_LANGUAGE_H
 
 /**
- * The namespace of the current library.
+ * @brief Namespace for C++ language-related functions and classes.
  */
 namespace commons {
 	/**
@@ -14,7 +14,7 @@ namespace commons {
 	 * @return true if the given pointer of type A can be cast to a pointer of type B.
 	 */
 	template<typename A, typename B>
-	[[maybe_unused]] inline bool isInstanceOf(const A *pointer) {
+	[[maybe_unused]] [[nodiscard]] inline bool isInstanceOf(const A *pointer) {
 		return (nullptr != dynamic_cast<const B *>(pointer));
 	}
 }

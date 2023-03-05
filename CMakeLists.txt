@@ -41,6 +41,7 @@ FetchContent_MakeAvailable(googletest)
 
 # Unit tests as an executable of this library
 add_executable(${PROJECT_NAME}-unit-tests
+        test/language_test.cpp
         test/math_test.cpp
         test/text_file_reading_test.cpp)
 
