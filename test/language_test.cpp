@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "language.h"
+#include "commons/language.h"
 
 TEST(LanguageTest, IsInstanceOfTest) {
 	class A {

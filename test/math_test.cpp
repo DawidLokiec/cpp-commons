@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../include/math.h"
+#include "commons/math.h"
 
 TEST(MathTest, ShouldCalculateTheSquareOfANumberCorrectly) {
 
