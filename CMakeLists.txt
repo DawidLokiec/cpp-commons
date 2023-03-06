@@ -18,7 +18,7 @@ if (MSVC)
     # PRIVATE specifies that the specified compile options are only for the ${PROJECT_NAME} itself,
     # and not for any targets that link to it.
     # warning level 4 and all warnings as errors
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX /EHsc /std:c++20)
 else ()
     # PRIVATE specifies that the specified compile options are only for the ${PROJECT_NAME} itself,
     # and not for any targets that link to it.
@@ -44,6 +44,18 @@ add_executable(${PROJECT_NAME}-unit-tests
         test/language_test.cpp
         test/math_test.cpp
         test/text_file_reading_test.cpp)
+
+if (MSVC)
+    # PRIVATE specifies that the specified compile options are only for the ${PROJECT_NAME} itself,
+    # and not for any targets that link to it.
+    # warning level 4 and all warnings as errors
+    target_compile_options(${PROJECT_NAME}-unit-tests PRIVATE /EHsc /std:c++20)
+else ()
+    # PRIVATE specifies that the specified compile options are only for the ${PROJECT_NAME} itself,
+    # and not for any targets that link to it.
+    # lots of warnings and all warnings as errors
+    target_compile_options(${PROJECT_NAME}-unit-tests PRIVATE -Wall -Wextra -pedantic -Werror)
+endif ()
 
 target_link_libraries(${PROJECT_NAME}-unit-tests gtest_main ${PROJECT_NAME})
 
