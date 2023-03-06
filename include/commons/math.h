@@ -1,8 +1,6 @@
 #ifndef CPP_COMMONS_MATH_H
 #define CPP_COMMONS_MATH_H
 
-#include <cmath>
-
 /**
  * @brief Namespace for math-related functions and classes.
  */

@@ -1,6 +1,7 @@
-#include "text_file_reading.h"
 #include <fstream>
 #include <sstream>
+
+#include "commons/text_file_reading.h"
 
 namespace {
 	void closeStreamIfOpen(std::ifstream &stream) {

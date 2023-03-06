@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "text_file_reading.h"
+#include "commons/text_file_reading.h"
 #include "config.h"
 
 TEST(IOTest, ShouldReadATextFileProperly) {
