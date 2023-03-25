@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.25.1)
+cmake_minimum_required(VERSION 3.26.1)
 project(cpp-commons LANGUAGES CXX VERSION 1.0.0)
 
 add_library(${PROJECT_NAME}
@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 target_include_directories(${PROJECT_NAME} PUBLIC include/)
-# A CMake pattern to have headers that are not seen by the consumers of this library.
-# So headers which not have to be visible for consumers should be placed in src/
+# A CMake pattern to have headers that are not seen by the client of this library.
+# So headers which not have to be visible for client-code should be placed in src/
 target_include_directories(${PROJECT_NAME} PRIVATE src)
 
 if (MSVC)
