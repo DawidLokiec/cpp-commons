@@ -68,6 +68,7 @@ namespace commons::layout {
      */
     template<typename... TS>
     struct [[maybe_unused]] StructureOfArrays : std::tuple<std::vector<TS>...> {
+
         /**
          * @brief Field access operator.
          *
