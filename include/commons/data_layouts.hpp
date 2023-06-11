@@ -21,6 +21,40 @@ namespace commons::layout {
     template<typename... TS>
     struct [[maybe_unused]] ArrayOfStructures : std::vector<std::tuple<TS...>> {
 
+        /**
+         * @brief Default constructor.
+         *
+         * @details Constructs an empty ArrayOfStructures object.
+         */
+        ArrayOfStructures() : std::vector<std::tuple<TS...>>() {
+
+        }
+
+        /**
+         * @brief Size constructor.
+         *
+         * @details Constructs an ArrayOfStructures object with a specified size.
+         *
+         * @param size The size of the ArrayOfStructures.
+         */
+        explicit ArrayOfStructures(const size_t size) : std::vector<std::tuple<TS...>>(size) {
+
+        }
+
+        /**
+         * @brief Field access operator.
+         *
+         * @details Retrieves the value of a field at a specific element index.
+         *
+         * @tparam Index The index of the field to retrieve.
+         * @param elementIndex The index of the element in the ArrayOfStructures.
+         * @param fieldIndex The index of the field in the tuple.
+         * @return The value of the specified field at the specified element index.
+         */
+        template<size_t Index>
+        auto operator()(const size_t elementIndex, const std::integral_constant<std::size_t, Index> fieldIndex) {
+            return std::get<fieldIndex.value>((*this)[elementIndex]);
+        }
     };
 
     /**
@@ -34,7 +68,21 @@ namespace commons::layout {
      */
     template<typename... TS>
     struct [[maybe_unused]] StructureOfArrays : std::tuple<std::vector<TS>...> {
-
+        /**
+         * @brief Field access operator.
+         *
+         * @details Retrieves the value of a field at a specific element index.
+         *
+         * @tparam Index The index of the field to retrieve.
+         * @param elementIndex The index of the element in the StructureOfArrays.
+         * @param fieldIndex The index of the field in the tuple.
+         * @return The value of the specified field at the specified element index.
+         */
+        template<size_t Index>
+        auto operator()(const size_t elementIndex, const std::integral_constant<std::size_t, Index> fieldIndex) {
+            const auto &element = std::get<fieldIndex.value>(*this);
+            return element[elementIndex];
+        }
     };
 }
 
